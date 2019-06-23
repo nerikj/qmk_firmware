@@ -63,4 +63,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
 
+#undef LSPO_KEY
+#undef RSPC_KEY
+#define LSPO_KEY KC_8 // Nordic Left SpaceCadet
+#define RSPC_KEY KC_9 // Nordic Right SpaceCadet
+
+#define LSPO_KEYS KC_LSFT, LSPO_MOD, LSPO_KEY
+#define RSPC_KEYS KC_RSFT, RSPC_MOD, RSPC_KEY
+
 #endif
