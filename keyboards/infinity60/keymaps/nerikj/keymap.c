@@ -78,7 +78,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------------|
    * |        |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|      |   |
    * |-----------------------------------------------------------'
-   * |     |NUM| NAV |         Space         | SYM |MED|   | GAM |
+   * | MED |NUM| NAV |         Space         | SYM |   |   | GAM |
    * `-----------------------------------------------------------'
    */
   [BASE] = LAYOUT_60_ansi_split_bs_rshift(
@@ -86,7 +86,29 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,  KC_Q,     KC_W,       KC_E,     KC_R,     KC_T, KC_Y, KC_U,     KC_I,     KC_O,         KC_P,        KC_LBRC, KC_RBRC, KC_BSLS, \
       KC_ESC,  KC_GUI_A, KC_ALT_S,   KC_CTL_D, KC_SFT_F, KC_G, KC_H, KC_SFT_J, KC_CTL_K, KC_ALT_L,     KC_GUI_SCLN, KC_QUOT, KC_ENT, \
       XXXXXXX, KC_Z,     KC_ALTGR_X, KC_C,     KC_V,     KC_B, KC_N, KC_M,     KC_COMM,  KC_ALTGR_DOT, KC_SLSH,     XXXXXXX, XXXXXXX, \
-      XXXXXXX, MO(NUM),  MO(NAV),            KC_SPC,                MO(SYM),   MO(MED),  XXXXXXX,    DF(GAM)),
+      MO(MED), MO(NUM),  MO(NAV),            KC_SPC,                MO(SYM),   XXXXXXX,  XXXXXXX,      DF(GAM)
+  ),
+
+  /* Layer: R MED
+   * ,-----------------------------------------------------------.
+   * |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+   * |---------------------------------------------------------- |
+   * |     |   |   |   |   |   |   |   |   |   |   |   |   |     |
+   * |---------------------------------------------------------- |
+   * |      |Gui|Alt|Ctl|Sft|   |   |   |Prv|VoD|VoU|Nxt|        |
+   * |---------------------------------------------------------- |
+   * |        |   |AGr|   |   |   |   |   |   |   |   |      |   |
+   * |-----------------------------------------------------------|
+   * |     |   |     |                       | Stp |Ply|Mut|     |
+   * `-----------------------------------------------------------'
+   */
+  [MED] = LAYOUT_60_ansi_split_bs_rshift(
+    XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,    XXXXXXX,
+    XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,
+    XXXXXXX,  KC_GUI_A, KC_ALT_S,   KC_CTL_D, KC_SFT_F, XXXXXXX,  XXXXXXX,  KC_MPRV,  KC_VOLD,  KC_VOLU,  KC_MNXT,  XXXXXXX,  XXXXXXX,
+    XXXXXXX,  XXXXXXX,  KC_ALTGR_X, XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+    XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  KC_MSTP,  KC_MPLY,  KC_MUTE,  XXXXXXX
+  ),
 
   /* Layer 1: Nav
    * ,-----------------------------------------------------------.
@@ -144,13 +166,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,        XXXXXXX,        KC_ALTGR_X,     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_WH_L,        KC_WH_D,        KC_WH_U,        KC_WH_R,        XXXXXXX,        XXXXXXX,
     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_BTN1,        KC_BTN2,        KC_BTN3,        XXXXXXX
   ),
-  [MED] = LAYOUT_60_ansi_split_bs_rshift(
-    XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
-    XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
-    XXXXXXX,        KC_GUI_A,       KC_ALT_S,       KC_CTL_D,       KC_SFT_F,       XXXXXXX,        XXXXXXX,        KC_MPRV,        KC_VOLD,        KC_VOLU,        KC_MNXT,        XXXXXXX,        XXXXXXX,
-    XXXXXXX,        XXXXXXX,        KC_ALTGR_X,     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
-    XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_MSTP,        KC_MPLY,        KC_MUTE,        XXXXXXX
-  ),
+
   [6] = LAYOUT_60_ansi_split_bs_rshift(
     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
     XXXXXXX,        KC_F12,         KC_F7,          KC_F8,          KC_F9,          KC_PSCR,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
