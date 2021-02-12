@@ -1,15 +1,15 @@
 #include QMK_KEYBOARD_H
 
-#define KC_GUI_A LGUI_T(KC_A)
-#define KC_ALT_S LALT_T(KC_S)
-#define KC_CTL_D LCTL_T(KC_D)
-#define KC_SFT_F LSFT_T(KC_F)
-#define KC_ALTGR_X RALT_T(KC_X)
-#define KC_SFT_J LSFT_T(KC_J)
-#define KC_CTL_K LCTL_T(KC_K)
-#define KC_ALT_L LALT_T(KC_L)
-#define KC_GUI_SCLN LGUI_T(KC_SCLN)
-#define KC_ALTGR_DOT RALT_T(KC_DOT)
+#define HOME_A LGUI_T(KC_A)
+#define HOME_S LALT_T(KC_S)
+#define HOME_D LCTL_T(KC_D)
+#define HOME_F LSFT_T(KC_F)
+#define HOME_X RALT_T(KC_X)
+#define HOME_J LSFT_T(KC_J)
+#define HOME_K LCTL_T(KC_K)
+#define HOME_L LALT_T(KC_L)
+#define HOME_SCLN LGUI_T(KC_SCLN)
+#define HOME_DOT RALT_T(KC_DOT)
 
 #define MY_EXLM LSFT(KC_1)
 #define MY_HASH LSFT(KC_3)
@@ -82,10 +82,10 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------'
    */
   [BASE] = LAYOUT_60_ansi_split_bs_rshift(
-      KC_NUBS, KC_1,     KC_2,       KC_3,     KC_4,     KC_5, KC_6, KC_7,     KC_8,     KC_9,         KC_0,        KC_MINS, KC_EQL,  KC_BSPC, XXXXXXX, \
-      KC_TAB,  KC_Q,     KC_W,       KC_E,     KC_R,     KC_T, KC_Y, KC_U,     KC_I,     KC_O,         KC_P,        KC_LBRC, KC_RBRC, KC_BSLS, \
-      KC_ESC,  KC_GUI_A, KC_ALT_S,   KC_CTL_D, KC_SFT_F, KC_G, KC_H, KC_SFT_J, KC_CTL_K, KC_ALT_L,     KC_GUI_SCLN, KC_QUOT, KC_ENT, \
-      XXXXXXX, KC_Z,     KC_ALTGR_X, KC_C,     KC_V,     KC_B, KC_N, KC_M,     KC_COMM,  KC_ALTGR_DOT, KC_SLSH,     XXXXXXX, XXXXXXX, \
+      KC_NUBS, KC_1,     KC_2,       KC_3,     KC_4,     KC_5, KC_6, KC_7,     KC_8,     KC_9,         KC_0,        KC_MINS, KC_EQL,  KC_BSPC, XXXXXXX,
+      KC_TAB,  KC_Q,     KC_W,       KC_E,     KC_R,     KC_T, KC_Y, KC_U,     KC_I,     KC_O,         KC_P,        KC_LBRC, KC_RBRC, KC_BSLS,
+      KC_ESC,  HOME_A,   HOME_S,     HOME_D,   HOME_F,   KC_G, KC_H, HOME_J,   HOME_K,   HOME_L,       HOME_SCLN,   KC_QUOT, KC_ENT,
+      XXXXXXX, KC_Z,     HOME_X,     KC_C,     KC_V,     KC_B, KC_N, KC_M,     KC_COMM,  HOME_DOT,     KC_SLSH,     XXXXXXX, XXXXXXX,
       MO(MED), MO(NUM),  MO(NAV),            KC_SPC,                MO(SYM),   XXXXXXX,  XXXXXXX,      DF(GAM)
   ),
 
