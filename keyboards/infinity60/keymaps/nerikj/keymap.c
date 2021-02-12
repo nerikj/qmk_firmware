@@ -1,15 +1,5 @@
 #include QMK_KEYBOARD_H
-
-#define HOME_A LGUI_T(KC_A)
-#define HOME_S LALT_T(KC_S)
-#define HOME_D LCTL_T(KC_D)
-#define HOME_F LSFT_T(KC_F)
-#define HOME_X RALT_T(KC_X)
-#define HOME_J LSFT_T(KC_J)
-#define HOME_K LCTL_T(KC_K)
-#define HOME_L LALT_T(KC_L)
-#define HOME_SCLN LGUI_T(KC_SCLN)
-#define HOME_DOT RALT_T(KC_DOT)
+#include "nerikj.h"
 
 #define MY_EXLM LSFT(KC_1)
 #define MY_HASH LSFT(KC_3)
@@ -58,15 +48,6 @@
 /* | >    | LSFT(KC_NUBS) | */
 /* | ?    | QUES          | */
 
-enum layers {
-  BASE,
-  NUM,
-  NAV,
-  SYM,
-  MED,
-  GAM,
-};
-
 const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Layer 0: Base
    * ,-----------------------------------------------------------.
@@ -105,8 +86,8 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [MED] = LAYOUT_60_ansi_split_bs_rshift(
     XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,    XXXXXXX,
     XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,
-    XXXXXXX,  KC_GUI_A, KC_ALT_S,   KC_CTL_D, KC_SFT_F, XXXXXXX,  XXXXXXX,  KC_MPRV,  KC_VOLD,  KC_VOLU,  KC_MNXT,  XXXXXXX,  XXXXXXX,
-    XXXXXXX,  XXXXXXX,  KC_ALTGR_X, XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+    XXXXXXX,  HOME_A,   HOME_S,     HOME_D,   HOME_F,   XXXXXXX,  XXXXXXX,  KC_MPRV,  KC_VOLD,  KC_VOLU,  KC_MNXT,  XXXXXXX,  XXXXXXX,
+    XXXXXXX,  XXXXXXX,  HOME_X,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  KC_MSTP,  KC_MPLY,  KC_MUTE,  XXXXXXX
   ),
 
@@ -126,8 +107,8 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NAV] = LAYOUT_60_ansi_split_bs_rshift(
     _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        KC_DEL,         _______,
     _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,
-    _______,        KC_GUI_A,       KC_ALT_S,       KC_CTL_D,       KC_SFT_F,       _______,        KC_CAPS,        KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        _______,        _______,
-    _______,        _______,        KC_ALTGR_X,     _______,        _______,        _______,        _______,        KC_HOME,        KC_PGDN,        KC_PGUP,        KC_END,         _______,        _______,
+    _______,        HOME_A,         HOME_S,         HOME_D,         HOME_F,         _______,        KC_CAPS,        KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        _______,        _______,
+    _______,        _______,        HOME_X,         _______,        _______,        _______,        _______,        KC_HOME,        KC_PGDN,        KC_PGUP,        KC_END,         _______,        _______,
     _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______
   ),
 
@@ -147,31 +128,31 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SYM] = LAYOUT_60_ansi_split_bs_rshift(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, MY_EXLM, MY_AT,   MY_LCBR, MY_RCBR, MY_PIPE, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, MY_HASH, MY_DLR,  MY_LPRN, MY_RPRN, MY_GRV,  XXXXXXX, KC_SFT_J, KC_CTL_K, KC_ALT_L,     KC_GUI_SCLN, XXXXXXX, XXXXXXX,
-    XXXXXXX, MY_PERC, MY_CIRC, MY_LBRC, MY_RBRC, MY_TILD, XXXXXXX, XXXXXXX,  XXXXXXX,  KC_ALTGR_DOT, XXXXXXX,     XXXXXXX, XXXXXXX,
+    XXXXXXX, MY_HASH, MY_DLR,  MY_LPRN, MY_RPRN, MY_GRV,  XXXXXXX, HOME_J,   HOME_K,   HOME_L,       HOME_SCLN,   XXXXXXX, XXXXXXX,
+    XXXXXXX, MY_PERC, MY_CIRC, MY_LBRC, MY_RBRC, MY_TILD, XXXXXXX, XXXXXXX,  XXXXXXX,  HOME_DOT,     XXXXXXX,     XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
   ),
 
   [NUM] = LAYOUT_60_ansi_split_bs_rshift(
     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
     XXXXXXX,        KC_SLSH,        KC_7,           KC_8,           KC_9,           XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
-    XXXXXXX,        KC_MINS,        KC_4,           KC_5,           KC_6,           XXXXXXX,        XXXXXXX,        KC_SFT_J,       KC_CTL_K,       KC_ALT_L,       KC_GUI_SCLN,    XXXXXXX,        XXXXXXX,
-    XXXXXXX,        LSFT(KC_PIPE),  KC_1,           KC_2,           KC_3,           XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_ALTGR_DOT,   XXXXXXX,        XXXXXXX,        XXXXXXX,
+    XXXXXXX,        KC_MINS,        KC_4,           KC_5,           KC_6,           XXXXXXX,        XXXXXXX,        HOME_J,         HOME_K,         HOME_L,         HOME_SCLN,      XXXXXXX,        XXXXXXX,
+    XXXXXXX,        LSFT(KC_PIPE),  KC_1,           KC_2,           KC_3,           XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        HOME_DOT,       XXXXXXX,        XXXXXXX,        XXXXXXX,
     KC_DOT,         KC_0,           LSFT(KC_7),     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX
   ),
   [3] = LAYOUT_60_ansi_split_bs_rshift(
     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
-    XXXXXXX,        KC_GUI_A,       KC_ALT_S,       KC_CTL_D,       KC_SFT_F,       XXXXXXX,        XXXXXXX,        KC_MS_L,        KC_MS_D,        KC_MS_U,        KC_MS_R,        XXXXXXX,        XXXXXXX,
-    XXXXXXX,        XXXXXXX,        KC_ALTGR_X,     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_WH_L,        KC_WH_D,        KC_WH_U,        KC_WH_R,        XXXXXXX,        XXXXXXX,
+    XXXXXXX,        HOME_A,         HOME_S,         HOME_D,         HOME_F,         XXXXXXX,        XXXXXXX,        KC_MS_L,        KC_MS_D,        KC_MS_U,        KC_MS_R,        XXXXXXX,        XXXXXXX,
+    XXXXXXX,        XXXXXXX,        HOME_X,         XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_WH_L,        KC_WH_D,        KC_WH_U,        KC_WH_R,        XXXXXXX,        XXXXXXX,
     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_BTN1,        KC_BTN2,        KC_BTN3,        XXXXXXX
   ),
 
   [6] = LAYOUT_60_ansi_split_bs_rshift(
     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
     XXXXXXX,        KC_F12,         KC_F7,          KC_F8,          KC_F9,          KC_PSCR,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,
-    XXXXXXX,        KC_F11,         KC_F4,          KC_F5,          KC_F6,          KC_SLCK,        XXXXXXX,        KC_SFT_J,       KC_CTL_K,       KC_ALT_L,       KC_GUI_SCLN,    XXXXXXX,        XXXXXXX,
-    XXXXXXX,        KC_F10,         KC_F1,          KC_F2,          KC_F3,          KC_PAUS,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_ALTGR_DOT,   XXXXXXX,        XXXXXXX,        XXXXXXX,
+    XXXXXXX,        KC_F11,         KC_F4,          KC_F5,          KC_F6,          KC_SLCK,        XXXXXXX,        HOME_J,         HOME_K,         HOME_L,         HOME_SCLN,      XXXXXXX,        XXXXXXX,
+    XXXXXXX,        KC_F10,         KC_F1,          KC_F2,          KC_F3,          KC_PAUS,        XXXXXXX,        XXXXXXX,        XXXXXXX,        HOME_DOT,       XXXXXXX,        XXXXXXX,        XXXXXXX,
     XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX
   ),
   [GAM] = LAYOUT_60_ansi_split_bs_rshift(
@@ -205,15 +186,15 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* [NAV] = LAYOUT_60_ansi_split_bs_rshift( */
   /*   _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        KC_DEL,         _______, */
   /*   _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______, */
-  /*   _______,        KC_GUI_A,       KC_ALT_S,       KC_CTL_D,       KC_SFT_F,       _______,        KC_CAPS,        KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        _______,        _______, */
-  /*   _______,        _______,        KC_ALTGR_X,     _______,        _______,        _______,        _______,        KC_HOME,        KC_PGDN,        KC_PGUP,        KC_END,         _______,        _______, */
+  /*   _______,        HOME_A,         HOME_S,         HOME_D,         HOME_F,         _______,        KC_CAPS,        KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        _______,        _______, */
+  /*   _______,        _______,        HOME_X,         _______,        _______,        _______,        _______,        KC_HOME,        KC_PGDN,        KC_PGUP,        KC_END,         _______,        _______, */
   /*   _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______ */
   /* ), */
   /* [SYM] = LAYOUT_60_ansi_split_bs_rshift( */
   /*   XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX, */
   /*   XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX, */
-  /*   XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_SFT_J,       KC_CTL_K,       KC_ALT_L,       KC_GUI_SCLN,    XXXXXXX,        XXXXXXX, */
-  /*   XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        KC_ALTGR_DOT,   XXXXXXX,        XXXXXXX,        XXXXXXX, */
+  /*   XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        HOME_J,         HOME_K,         HOME_L,         HOME_SCLN,      XXXXXXX,        XXXXXXX, */
+  /*   XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        HOME_DOT,       XXXXXXX,        XXXXXXX,        XXXXXXX, */
   /*   XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX,        XXXXXXX */
   /* ), */
 
