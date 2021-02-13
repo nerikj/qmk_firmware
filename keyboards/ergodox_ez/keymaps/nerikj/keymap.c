@@ -39,8 +39,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        |      |      |       |      |      |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      |      |       |      |        |      |
- *                                 | Spc/ | Bsp/ |------|       |------|  Del   | Ent/ |
- *                                 | NAV  | NUM  |   =  |       |   \  |        | SYM  |
+ *                                 | Spc/ | Bsp/ |------|       |------|  Del/  | Ent/ |
+ *                                 | NAV  | NUM  |   =  |       |   \  |  FUN   | SYM  |
  *                                 `--------------------'       `----------------------'
  */
 [BASE] = LAYOUT_ergodox_pretty(
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
                                                                  XXXXXXX, XXXXXXX,                 XXXXXXX, XXXXXXX,
                                                                           XXXXXXX,                 XXXXXXX,
-                                         LT(NAV,KC_SPC), LT(NUM,KC_BSPC), KC_EQL,                  KC_BSLS, KC_DEL, LT(SYM,KC_ENT)
+                                         LT(NAV,KC_SPC), LT(NUM,KC_BSPC), KC_EQL,                  KC_BSLS, LT(FUN,KC_DEL), LT(SYM,KC_ENT)
 ),
 
 /* Layer: R MED
@@ -151,6 +151,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                RGB_MOD, XXXXXXX,     RGB_TOG, RGB_SLD,
                                                         XXXXXXX,     XXXXXXX,
                                       RGB_VAD, RGB_VAI, XXXXXXX,     XXXXXXX, RGB_HUD, RGB_HUI
+),
+
+/* Keymap: FUN
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |------|           |------|      | Shift| Ctrl |  Alt |  Gui |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |      |      |      | AltGr|      |        |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+ *   |      |      |      |      |      |                                       |      |      |      |      |      |
+ *   `----------------------------------'                                       `----------------------------------'
+ *                                        ,-------------.       ,-------------.
+ *                                        |      |      |       |      |      |
+ *                                 ,------|------|------|       |------+------+------.
+ *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |------|       |------|      |      |
+ *                                 |      |      |      |       |      |      |      |
+ *                                 `--------------------'       `--------------------'
+ */
+[FUN] = LAYOUT_ergodox_pretty(
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,    XXXXXXX,
+  XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F4,   XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,    XXXXXXX,
+  XXXXXXX, KC_F5,   KC_F6,   KC_F7,   KC_F8,   XXXXXXX,                       XXXXXXX, HOME_J,  HOME_K,  HOME_L,    HOME_SCLN,  XXXXXXX,
+  XXXXXXX, KC_F9,   KC_F10,  KC_F11,  KC_F12,  XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, HOME_DOT,  XXXXXXX,    XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                         XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,    XXXXXXX,
+
+                                               XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,
+                                                        XXXXXXX,     XXXXXXX,
+                                      XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 /* Keymap 2: Navigation
