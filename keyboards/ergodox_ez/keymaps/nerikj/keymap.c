@@ -44,15 +44,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `----------------------'
  */
 [BASE] = LAYOUT_ergodox_pretty(
-  KC_NUBS, KC_1,     KC_2,       KC_3,     KC_4,     KC_5,    XXXXXXX,              XXXXXXX,  KC_6,    KC_7,     KC_8,     KC_9,         KC_0,        KC_MINS,
-  KC_TAB,  KC_Q,     KC_W,       KC_E,     KC_R,     KC_T,    KC_EQL,               KC_BSLS,  KC_Y,    KC_U,     KC_I,     KC_O,         KC_P,        KC_LBRC,
-  KC_ESC,  HOME_A,   HOME_S,     HOME_D,   HOME_F,   KC_G,                                    KC_H,    HOME_J,   HOME_K,   HOME_L,       HOME_SCLN,   KC_QUOT,
-  XXXXXXX, KC_Z,     HOME_X,     KC_C,     KC_V,     KC_B,    XXXXXXX,              XXXXXXX,  KC_N,    KC_M,     KC_COMM,  HOME_DOT,     KC_SLSH,     XXXXXXX,
-  XXXXXXX, XXXXXXX,  XXXXXXX,    XXXXXXX,  MO(MED),                                                    XXXXXXX,  XXXXXXX,  XXXXXXX,      KC_RBRC,     XXXXXXX,
+  KC_NUBS,       KC_1,     KC_2,       KC_3,     KC_4,     KC_5,    XXXXXXX,              XXXXXXX,  KC_6,    KC_7,     KC_8,     KC_9,         KC_0,        KC_MINS,
+  KC_TAB,        KC_Q,     KC_W,       KC_E,     KC_R,     KC_T,    KC_EQL,               KC_BSLS,  KC_Y,    KC_U,     KC_I,     KC_O,         KC_P,        KC_LBRC,
+  KC_ESC,        HOME_A,   HOME_S,     HOME_D,   HOME_F,   KC_G,                                    KC_H,    HOME_J,   HOME_K,   HOME_L,       HOME_SCLN,   KC_QUOT,
+  OSM(MOD_LSFT), KC_Z,     HOME_X,     KC_C,     KC_V,     KC_B,    XXXXXXX,              XXXXXXX,  KC_N,    KC_M,     KC_COMM,  HOME_DOT,     KC_SLSH,     OSM(MOD_RSFT),
+  XXXXXXX,       XXXXXXX,  XXXXXXX,    XXXXXXX,  MO(MED),                                                    XXXXXXX,  XXXXXXX,  XXXXXXX,      KC_RBRC,     XXXXXXX,
 
-                                                                 XXXXXXX, XXXXXXX,                 XXXXXXX, XXXXXXX,
-                                                                          XXXXXXX,                 XXXXXXX,
-                                         LT(NAV,KC_SPC), LT(NUM,KC_BSPC), KC_EQL,                  KC_BSLS, LT(FUN,KC_DEL), LT(SYM,KC_ENT)
+                                                            XXXXXXX, XXXXXXX,             XXXXXXX, XXXXXXX,
+                                                                     XXXXXXX,             XXXXXXX,
+                                     LT(NAV,KC_SPC), LT(NUM,KC_BSPC), KC_EQL,             KC_BSLS, LT(FUN,KC_DEL), LT(SYM,KC_ENT)
 ),
 
 /* Layer: R MED
@@ -86,6 +86,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,
                                                         XXXXXXX,     XXXXXXX,
                                       XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, KC_MSTP, KC_MPLY
+),
+
+/* Layer: R MED
+ *
+ * ,--------------------------------------------------.           ,--------------------------------------------------.
+ * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
+ * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
+ * |        |      |      |      |      |      |      |           |      |      |   7  |   8  |   9  |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        | LGui | LAlt | LCtl | LSft |      |------|           |------|      |   4  |   5  |   6  |      |        |
+ * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
+ * |        |      | RAlt |      |      |      |      |           |      |      |   1  |   2  |   3  |      |        |
+ * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
+ *   |      |      |      |      |      |                                       |      |      |      |      |      |
+ *   `----------------------------------'                                       `----------------------------------'
+ *                                        ,-------------.       ,-------------.
+ *                                        |      |      |       |      |      |
+ *                                 ,------|------|------|       |------+------+------.
+ *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |------|       |------|  DOT |   0  |
+ *                                 |      |      |      |       |      |      |      |
+ *                                 `--------------------'       `--------------------'
+ */
+[NUM] = LAYOUT_ergodox_pretty(
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX,  XXXXXXX,
+  XXXXXXX, HOME_A,  HOME_S,  HOME_D,  HOME_F,  XXXXXXX,                       XXXXXXX, KC_4,    KC_5,    KC_6,    XXXXXXX,  XXXXXXX,
+  XXXXXXX, XXXXXXX, HOME_X,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_1,    KC_2,    KC_3,    XXXXXXX,  XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
+
+                                               XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX,
+                                                        XXXXXXX,     XXXXXXX,
+                                      XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, KC_DOT,  KC_0
 ),
 
 /* Keymap 2: Navigation

@@ -57,17 +57,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------------|
    * |  Esc |  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|Enter   |
    * |-----------------------------------------------------------|
-   * |        |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|      |   |
+   * |  OSSft |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /| OSSft|   |
    * |-----------------------------------------------------------'
    * | MED |NUM| NAV |         Space         | SYM |   |   | GAM |
    * `-----------------------------------------------------------'
    */
   [BASE] = LAYOUT_60_ansi(
-      KC_NUBS, KC_1,     KC_2,       KC_3,     KC_4,     KC_5, KC_6, KC_7,     KC_8,     KC_9,         KC_0,        KC_MINS, KC_EQL,  KC_BSPC,
-      KC_TAB,  KC_Q,     KC_W,       KC_E,     KC_R,     KC_T, KC_Y, KC_U,     KC_I,     KC_O,         KC_P,        KC_LBRC, KC_RBRC, KC_BSLS,
-      KC_ESC,  HOME_A,   HOME_S,     HOME_D,   HOME_F,   KC_G, KC_H, HOME_J,   HOME_K,   HOME_L,       HOME_SCLN,   KC_QUOT, KC_ENT,
-      XXXXXXX, KC_Z,     HOME_X,     KC_C,     KC_V,     KC_B, KC_N, KC_M,     KC_COMM,  HOME_DOT,     KC_SLSH,     XXXXXXX,
-      MO(MED), MO(NUM),  MO(NAV),            KC_SPC,                MO(SYM),   MO(FUN),  XXXXXXX,      DF(GAM)
+      KC_NUBS,       KC_1,     KC_2,       KC_3,     KC_4,     KC_5, KC_6, KC_7,     KC_8,     KC_9,         KC_0,        KC_MINS, KC_EQL,  KC_BSPC,
+      KC_TAB,        KC_Q,     KC_W,       KC_E,     KC_R,     KC_T, KC_Y, KC_U,     KC_I,     KC_O,         KC_P,        KC_LBRC, KC_RBRC, KC_BSLS,
+      KC_ESC,        HOME_A,   HOME_S,     HOME_D,   HOME_F,   KC_G, KC_H, HOME_J,   HOME_K,   HOME_L,       HOME_SCLN,   KC_QUOT, KC_ENT,
+      OSM(MOD_LSFT), KC_Z,     HOME_X,     KC_C,     KC_V,     KC_B, KC_N, KC_M,     KC_COMM,  HOME_DOT,     KC_SLSH,     OSM(MOD_RSFT),
+      MO(MED),       MO(NUM),  MO(NAV),            KC_SPC,                MO(SYM),   MO(FUN),  XXXXXXX,      DF(GAM)
   ),
 
   /* Layer: R MED
@@ -89,6 +89,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,  HOME_A,   HOME_S,     HOME_D,   HOME_F,   XXXXXXX,  XXXXXXX,  KC_MPRV,  KC_VOLD,  KC_VOLU,  KC_MNXT,  XXXXXXX,  XXXXXXX,
     XXXXXXX,  XXXXXXX,  HOME_X,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  KC_MSTP,  KC_MPLY,  KC_MUTE,  XXXXXXX
+  ),
+
+  /* Layer: R NUM
+   * ,-----------------------------------------------------------.
+   * |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+   * |---------------------------------------------------------- |
+   * |     |   |   |   |   |   |   |   | 7 | 8 | 9 |   |   |     |
+   * |---------------------------------------------------------- |
+   * |      |Gui|Alt|Ctl|Sft|   |   |   | 4 | 5 | 6 |   |        |
+   * |---------------------------------------------------------- |
+   * |        |   |AGr|   |   |   |   |   | 1 | 2 | 3 |      |   |
+   * |-----------------------------------------------------------|
+   * |     |   |     |                       |  0  |DOT|   |     |
+   * `-----------------------------------------------------------'
+   */
+  [NUM] = LAYOUT_60_ansi(
+    XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,
+    XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_7,     KC_8,     KC_9,     XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,
+    XXXXXXX,  HOME_A,   HOME_S,     HOME_D,   HOME_F,   XXXXXXX,  XXXXXXX,  KC_4,     KC_5,     KC_6,     XXXXXXX,  XXXXXXX,  XXXXXXX,
+    XXXXXXX,  XXXXXXX,  HOME_X,     XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_1,     KC_2,     KC_3,     XXXXXXX,  XXXXXXX,
+    XXXXXXX,  XXXXXXX,  XXXXXXX,    XXXXXXX,  KC_0,     KC_DOT,   XXXXXXX,  XXXXXXX
   ),
 
   /* Layer 1: Nav
