@@ -2,7 +2,8 @@
 
 /* #include QMK_KEYBOARD_H */
 
-enum layers { BASE, NUM, NAV, SYM, MED, FUN, GAM };
+/* Why doesn't it work if I name the layer SYM instead of ZYM? */
+enum layers { BASE, NUM, NAV, ZYM, MED, FUN, GAM };
 
 #define HOME_A LGUI_T(KC_A)
 #define HOME_S LALT_T(KC_S)
