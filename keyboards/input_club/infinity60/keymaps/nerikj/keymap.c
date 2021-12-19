@@ -59,7 +59,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------------|
    * |  OSSft |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /| OSSft|   |
    * |-----------------------------------------------------------'
-   * | MED |NUM| NAV |         Space         | SYM |   |   | GAM |
+   * | MED |NUM| NAV |         Space         | ZYM |   |   | GAM |
    * `-----------------------------------------------------------'
    */
   [BASE] = LAYOUT_60_ansi_split_bs_rshift(
@@ -67,7 +67,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,        KC_Q,     KC_W,       KC_E,     KC_R,     KC_T, KC_Y, KC_U,     KC_I,     KC_O,         KC_P,        KC_LBRC,       KC_RBRC, KC_BSLS,
       KC_ESC,        HOME_A,   HOME_S,     HOME_D,   HOME_F,   KC_G, KC_H, HOME_J,   HOME_K,   HOME_L,       HOME_SCLN,   KC_QUOT,       KC_ENT,
       OSM(MOD_LSFT), KC_Z,     HOME_X,     KC_C,     KC_V,     KC_B, KC_N, KC_M,     KC_COMM,  HOME_DOT,     KC_SLSH,     OSM(MOD_RSFT), XXXXXXX,
-      MO(MED),       MO(NUM),  MO(NAV),            KC_SPC,                MO(SYM),   MO(FUN),  XXXXXXX,      DF(GAM)
+      MO(MED),       MO(NUM),  MO(NAV),            KC_SPC,                MO(ZYM),   MO(FUN),  XXXXXXX,      DF(GAM)
   ),
 
   /* Layer: R MED
@@ -126,11 +126,11 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------'
    */
   [NAV] = LAYOUT_60_ansi_split_bs_rshift(
-    _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        KC_DEL,         _______,
-    _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______,
-    _______,        HOME_A,         HOME_S,         HOME_D,         HOME_F,         _______,        KC_CAPS,        KC_LEFT,        KC_DOWN,        KC_UP,          KC_RGHT,        _______,        _______,
-    _______,        _______,        HOME_X,         _______,        _______,        _______,        _______,        KC_HOME,        KC_PGDN,        KC_PGUP,        KC_END,         _______,        _______,
-    _______,        _______,        _______,        _______,        _______,        _______,        _______,        _______
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  KC_DEL,   _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  HOME_A,   HOME_S,   HOME_D,   HOME_F,   _______,  KC_CAPS,  KC_LEFT,  KC_DOWN,  KC_UP,    KC_RGHT,  _______,  _______,
+    _______,  _______,  HOME_X,   _______,  _______,  _______,  _______,  KC_HOME,  KC_PGDN,  KC_PGUP,  KC_END,   _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______
   ),
 
   /* Layer 1: Sym
@@ -146,12 +146,12 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |     |   |     |                       |     |   |   |     |
    * `-----------------------------------------------------------'
    */
-  [SYM] = LAYOUT_60_ansi_split_bs_rshift(
-    KC_GRV,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, MY_EXLM, MY_AT,   MY_LCBR, MY_RCBR, MY_PIPE, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX,      XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, MY_HASH, MY_DLR,  MY_LPRN, MY_RPRN, MY_GRV,  XXXXXXX, HOME_J,   HOME_K,   HOME_L,       HOME_SCLN,   XXXXXXX, XXXXXXX,
-    XXXXXXX, MY_PERC, MY_CIRC, MY_LBRC, MY_RBRC, MY_TILD, XXXXXXX, XXXXXXX,  XXXXXXX,  HOME_DOT,     XXXXXXX,     XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+  [ZYM] = LAYOUT_60_ansi_split_bs_rshift(
+    KC_GRV,   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  KC_GRAVE, KC_COMMA, KC_7,     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  HOME_J,   HOME_K,   HOME_L,   HOME_SCLN,_______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  HOME_DOT, _______,  _______,  _______,
+    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______
   ),
 
   [NUM] = LAYOUT_60_ansi_split_bs_rshift(
